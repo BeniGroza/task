@@ -1,0 +1,40 @@
+<h1>Users:</h1>
+<div style="margin: 20px;">
+    <label class="Bold">Filter: </label>
+    <input type="text" placeholder="Search by name" (change)="filter($event)"/>
+</div>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>address</th>
+            <th>Company</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.address.city}}</td>
+            <td>{{user.company.name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-container>
+    <button style="margin: 20px;" (click)="sort()">Sort by username</button>
+</ng-container>
+
+<div style="margin: 20px;">
+    <label class="Bold">Delete user by username: </label>
+    <input type="text" placeholder="username" (change)="deleteUser($event)"/>
+</div>
+
+<div style="margin: 20px;">
+    <label class="Bold">Add user name: </label>
+    <input type="text" placeholder="user" (change)="addUser($event)"/>
+</div>

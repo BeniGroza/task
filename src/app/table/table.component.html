@@ -1,0 +1,6 @@
+<table-item [users]="dataTable$ | async" 
+    (sortOutput)="getSortedData()" 
+    (filterOutput)="getFilteredData($event)"
+    (deleteOutput)="deleteUser($event)"
+    (addUserOutput)="addUser($event)">
+</table-item>
